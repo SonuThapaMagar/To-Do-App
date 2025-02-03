@@ -1,11 +1,17 @@
-import React from 'react'
+import React,  {useState} from 'react'
 import Tag from './Tag'
 
 const TaskForm = () => {
+    const [task, setTask] = useState("");
+
+    const handleTaskChange=e=>{
+        setTask(e.target.value);
+    }
+    console.log(task);
     return (
         <header className='flex justify-center items-center mx-auto text-center py-6 mt-12'>
             <form action="" className='w-full max-w-3xl space-y-6 px-4 rounded'>
-                <input type="text" className='w-100 text-xl bg-gray-200 border-rounded rounded p-4 mt-4 py-2' placeholder='Enter your task' />
+                <input type="text" className='w-100 text-xl bg-gray-200 border-rounded rounded p-4 mt-4 py-2' placeholder='Enter your task' onChange={handleTaskChange} />
                 <div className='flex items-center justify-between'>
                     <div>
                         <Tag tagName="HTML"></Tag>
