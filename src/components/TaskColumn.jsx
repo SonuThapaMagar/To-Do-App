@@ -2,7 +2,6 @@ import React from "react";
 import { FaCheckCircle, FaStar, FaBullseye } from "react-icons/fa";
 
 const TaskColumn = ({ title }) => {
-    // Choose an icon based on the title
     const getIcon = (title) => {
         switch (title) {
             case "To Do":
