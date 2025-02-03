@@ -11,6 +11,13 @@ const TaskForm = () => {
                     <button>CSS</button>
                     <button>JavaScript</button>
                     <button>React</button>
+
+                    <select name="" id="" className="task_status">
+                        <option value="todo">To Do</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">Done</option>
+                    </select>
+                    <button type='submit' className='task_submit'>Add Task</button>
                 </div>
             </form>
         </header>
