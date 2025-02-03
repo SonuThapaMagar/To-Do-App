@@ -1,14 +1,15 @@
 import React from 'react'
 import TaskForm from './components/TaskForm'
+import TaskColumn from './components/TaskColumn'
 
 const App = () => {
   return (
     <div className='grid'>
     <TaskForm></TaskForm>
       <main className="flex justify-evenly p-4">
-        <section className="bg-blue-400 w-40 m-4 rounded text-center">To Do</section>
-        <section className="bg-blue-400 w-40 m-4 rounded text-center">Doing</section>
-        <section className="bg-blue-400 w-40 m-4 rounded text-center">Completed</section>
+        <TaskColumn title="To Do"></TaskColumn>
+        <TaskColumn title="Doing"></TaskColumn>
+        <TaskColumn title="Done"></TaskColumn>
       </main>
     </div>
   )
