@@ -1,44 +1,38 @@
-import React,  {useState} from 'react'
+import React, { useState } from 'react'
 import Tag from './Tag'
 
 const TaskForm = () => {
     const [taskData, setTaskData] = useState({
-        task:"",
-        status:"todo"
+        task: "",
+        status: "todo",
+        tags: [],
     })
-
-    const handleChange =(e)=>{
-        const {name,value}=e.target;
-
-        setTaskData(prev=>{
-            return {...prev,[name]:value}
-        })
-        console.log(name,value);
+    const selectTag = (tag) => {
+        console.log(tag);
     }
-    const handleSubmit =(e)=>{
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        setTaskData(prev => {
+            return { ...prev, [name]: value }
+        })
+        console.log(name, value);
+    }
+    const handleSubmit = (e) => {
         e.preventDefault();
         console.log(taskData);
     }
-    // const [task, setTask] = useState("");
-    // const [status, setStatus] = useState("todo");
 
-    // const handleTaskChange=e=>{
-    //     setTask(e.target.value);
-    // }
-
-    // const handleStatusChange=e=>{
-    //     setStatus(e.target.value);
-    // }
     return (
         <header className='flex justify-center items-center mx-auto text-center py-6 mt-12'>
             <form action="" onSubmit={handleSubmit} className='w-full max-w-3xl space-y-6 px-4 rounded'>
                 <input type="text" name='task' className='w-100 text-xl bg-gray-200 border-rounded rounded p-4 mt-4 py-2' placeholder='Enter your task' onChange={handleChange} />
                 <div className='flex items-center justify-between'>
                     <div>
-                        <Tag tagName="HTML"></Tag>
-                        <Tag tagName="CSS"></Tag>
-                        <Tag tagName="Java Script"></Tag>
-                        <Tag tagName="React"></Tag>
+                        <Tag tagName="HTML" selectTag={selectTag}></Tag>
+                        <Tag tagName="CSS" selectTag={selectTag}></Tag>
+                        <Tag tagName="Java Script" selectTag={selectTag}></Tag>
+                        <Tag tagName="React" selectTag={selectTag}></Tag>
                     </div>
 
                     <div>
