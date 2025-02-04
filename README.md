@@ -34,5 +34,8 @@ npm run dev
 ```
 This will start the Vite development server and open your portfolio in the default web browser, typically at http://localhost:5173.
 
-
+# Tech Stack
+- HTML
+- Tailwind CSS
+- React Js
 
