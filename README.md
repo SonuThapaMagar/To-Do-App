@@ -1,8 +1,46 @@
-# React + Vite
+## Todo List App
+This is a simple Todo List application that helps users manage their tasks efficiently. Users can add, edit, and delete tasks to stay organized and keep track of their daily activities.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features:
+- Add new tasks
+- Mark tasks as completed
+- Edit or delete tasks
+- User-friendly interface
 
-Currently, two official plugins are available:
+  This project is built to practice basic CRUD operations and improve productivity with a minimalistic task management tool.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  # Installation
+
+## Setup and Installation
+To run this project locally, follow the steps below:
+
+- Clone the repository:
+
+```bash
+git clone https://github.com/SonuThapaMagar/To-Do-App.git
+```
+
+- Navigate to the project directory:
+```
+cd todo
+```
+- Install the dependencies:
+```
+npm install
+```
+Run the project:
+```
+npm run dev
+```
+This will start the Vite development server and open your portfolio in the default web browser, typically at http://localhost:5173.
+
+# Tech Stack
+- HTML
+- Tailwind CSS
+- React Js
+
+# Conclusion
+This React + Vite TODO List App provides a way to manage tasks with features like adding, editing, and deleting tasks. Whether you're keeping track of daily activities or long-term goals, this app helps streamline your workflow. Feel free to enhance it further with additional features like authentication, drag-and-drop functionality, or cloud storage integration.
+
+
+
