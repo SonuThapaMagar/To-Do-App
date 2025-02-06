@@ -38,7 +38,7 @@ const TaskForm = ({ setTasks }) => {
     <header className="flex justify-center items-center mx-auto text-center py-6 sm:py-8 md:py-10">
       <form 
         onSubmit={handleSubmit} 
-        className=" m-4 w-full max-w-lg sm:max-w-2xl md:max-w-3xl space-y-4 p-6 rounded-lg shadow-lg bg-gradient-to-br from-purple-200 to-indigo-400 text-black"
+        className="w-full max-w-3xl p-6 rounded-lg shadow-lg bg-gradient-to-br from-purple-200 to-indigo-400 text-black mt-0"
       >
         {/* Input Field */}
         <input
@@ -50,29 +50,31 @@ const TaskForm = ({ setTasks }) => {
           onChange={handleChange}
         />
 
-        {/* Tags Section */}
-        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
-          {["HTML", "CSS", "JavaScript", "React"].map((tag) => (
-            <Tag key={tag} tagName={tag} selectTag={selectTag} selected={taskData.tags.includes(tag)} />
-          ))}
-        </div>
+        {/* Tags, Select & Button in One Row */}
+        <div className="flex flex-wrap items-center gap-2 mt-4">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 min-w-0">
+            {["HTML", "CSS", "JavaScript", "React"].map((tag) => (
+              <Tag key={tag} tagName={tag} selectTag={selectTag} selected={taskData.tags.includes(tag)} />
+            ))}
+          </div>
 
-        {/* Status & Submit Button */}
-        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+          {/* Select Status */}
           <select 
             name="status" 
             value={taskData.status} 
-            className="w-full sm:w-auto text-base bg-gray-100 cursor-pointer px-4 py-2 rounded-md focus:outline-none"
+            className="text-base bg-gray-100 cursor-pointer px-4 py-2 rounded-md focus:outline-none"
             onChange={handleChange}
           >
             <option value="todo">To Do</option>
             <option value="doing">Doing</option>
             <option value="done">Done</option>
           </select>
-          
+
+          {/* Submit Button */}
           <button 
             type="submit" 
-            className="w-full sm:w-auto text-lg bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-all"
+            className="text-lg bg-purple-600 text-white px-6 py-2 rounded-md hover:bg-purple-700 transition-all"
           >
             Add Task
           </button>

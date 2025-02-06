@@ -18,10 +18,10 @@ const App = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-gray-200 text-white flex flex-col items-center">
+    <div className="relative w-full min-h-screen bg-gray-300 text-white flex flex-col items-center">
       {/* App Title */}
       <h2
-        className="text-center mt-6 text-3xl sm:text-4xl font-bold text-purple-400"
+        className="text-center mt-6 mb-0 text-3xl sm:text-4xl font-bold text-purple-400"
         style={{ fontFamily: "'Bungee Shade', cursive" }}
       >
         To Do App
