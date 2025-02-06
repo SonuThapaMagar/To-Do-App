@@ -28,17 +28,17 @@ const TaskForm = ({ setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(taskData);
-    
+
     setTasks((prev) => (Array.isArray(prev) ? [...prev, taskData] : [taskData]));
-  
+
     setTaskData({ task: "", status: "todo", tags: [] });
   };
-  
+
 
 
   return (
-    <header className="flex justify-center items-center mx-auto text-center py-6 mt-12">
-      <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-6 px-4 rounded">
+    <header className="flex justify-center items-center mx-auto text-center py-8 mt-12">
+      <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-6 p-4 rounded-lg shadow-lg bg-gradient-to-br from-purple-200 to-indigo-400 text-black">
         <input
           type="text"
           name="task"
