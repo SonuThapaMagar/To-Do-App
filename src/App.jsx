@@ -16,16 +16,21 @@ const App = () => {
 
   const deleteTask = (taskToDelete) => {
     setTasks((prev) => prev.filter(task => task !== taskToDelete));
-  };  
+  };
 
   return (
-    <div className="grid">
-      <TaskForm setTasks={setTasks} />
-      <main className="flex justify-evenly p-4">
-        <TaskColumn title="To Do" tasks={tasks} status="todo" deleteTask={deleteTask} />
-        <TaskColumn title="Doing" tasks={tasks} status="doing" deleteTask={deleteTask} />
-        <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />
-      </main>
+    <div>
+      <h2 className="text-center mt-8 text-3xl font-bold text-purple-700 animate-pulse" style={{ fontFamily: "'Bungee Shade', cursive" }}>
+        To Do App
+      </h2>
+      <div className="grid">
+        <TaskForm setTasks={setTasks} />
+        <main className="flex justify-evenly p-4">
+          <TaskColumn title="To Do" tasks={tasks} status="todo" deleteTask={deleteTask} />
+          <TaskColumn title="Doing" tasks={tasks} status="doing" deleteTask={deleteTask} />
+          <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />
+        </main>
+      </div>
     </div>
   ); first
 };
