@@ -19,8 +19,8 @@ const TaskColumn = ({ title, tasks=[], status, deleteTask  }) => {
         {icons[title] || null}
         {title}
       </h2>
-      {filteredTasks.map((task, index) => (
-        <TaskCard key={index}  index={index} title={task.task} tags={task.tags} deleteTask={deleteTask} />
+      {filteredTasks.map((task) => (
+        <TaskCard key={task.task} title={task.task} tags={task.tags} deleteTask={() => deleteTask(task)} />
       ))}
     </section>
   );

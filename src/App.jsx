@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
 import TaskColumn from "./components/TaskColumn";
 
-const oldTasks=localStorage.getItem("tasks")
+const oldTasks = localStorage.getItem("tasks")
 
 console.log(oldTasks);
 const App = () => {
-  const [tasks, setTasks] = useState(JSON.parse(oldTasks)|| []);
+  const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
   console.log("App tasks:", tasks);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks))
-  },[tasks])
-  
+  }, [tasks])
 
-  const deleteTask = (taskIndex) => {
-    setTasks((prev) => prev.filter((_, index) => index !== taskIndex));
-  };
+
+  const deleteTask = (taskToDelete) => {
+    setTasks((prev) => prev.filter(task => task !== taskToDelete));
+  };  
 
   return (
     <div className="grid">
@@ -27,7 +27,7 @@ const App = () => {
         <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />
       </main>
     </div>
-  );first
+  ); first
 };
 
 export default App;

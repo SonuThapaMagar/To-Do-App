@@ -18,7 +18,7 @@ const TaskCard = ({ title, tags, index, deleteTask}) => {
                  <FaTrash
                     className="text-rose-800 cursor-pointer"
                     title="Delete"
-                    onClick={() => deleteTask(index)}
+                    onClick={() => deleteTask({ title, tags })}
                 />
             </div>
         </article>
