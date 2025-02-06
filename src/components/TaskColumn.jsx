@@ -8,7 +8,7 @@ const icons = {
   "Done": <FaCheckCircle className="text-green-500 mr-2" title="Completed" />,
 };
 
-const TaskColumn = ({ title, tasks=[], status }) => {
+const TaskColumn = ({ title, tasks=[], status, deleteTask  }) => {
   
   const filteredTasks = tasks.filter((task) => task.status === status);
   console.log(`Column ${title} (${status}) - Filtered Tasks:`, filteredTasks);
@@ -20,7 +20,7 @@ const TaskColumn = ({ title, tasks=[], status }) => {
         {title}
       </h2>
       {filteredTasks.map((task, index) => (
-        <TaskCard key={index} title={task.task} tags={task.tags} />
+        <TaskCard key={index}  index={index} title={task.task} tags={task.tags} deleteTask={deleteTask} />
       ))}
     </section>
   );

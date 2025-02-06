@@ -2,7 +2,7 @@ import React from 'react';
 import Tag from "./Tag";
 import { FaTrash } from "react-icons/fa";
 
-const TaskCard = ({ title, tags }) => {
+const TaskCard = ({ title, tags, index, deleteTask}) => {
     console.log("Rendering TaskCard with:", { title, tags });
 
     return (
@@ -15,7 +15,11 @@ const TaskCard = ({ title, tags }) => {
                         <Tag key={index} tagName={tag} selected />
                     ))}
                 </div>
-                <FaTrash className="text-rose-800 cursor-pointer" title="Delete" />
+                 <FaTrash
+                    className="text-rose-800 cursor-pointer"
+                    title="Delete"
+                    onClick={() => deleteTask(index)}
+                />
             </div>
         </article>
     );
