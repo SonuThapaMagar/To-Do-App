@@ -28,9 +28,12 @@ const TaskForm = ({ setTasks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(taskData);
-    setTasks((prev) => [...prev, taskData]);
-    // setTaskData({ task: "", status: "todo", tags: [] });
+    
+    setTasks((prev) => (Array.isArray(prev) ? [...prev, taskData] : [taskData]));
+  
+    setTaskData({ task: "", status: "todo", tags: [] });
   };
+  
 
 
   return (
