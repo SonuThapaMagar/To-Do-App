@@ -34,35 +34,48 @@ const TaskForm = ({ setTasks }) => {
     setTaskData({ task: "", status: "todo", tags: [] });
   };
 
-
-
   return (
-    <header className="flex justify-center items-center mx-auto text-center py-8 mt-12">
-      <form onSubmit={handleSubmit} className="w-full max-w-3xl space-y-6 p-4 rounded-lg shadow-lg bg-gradient-to-br from-purple-200 to-indigo-400 text-black">
+    <header className="flex justify-center items-center mx-auto text-center py-6 sm:py-8 md:py-10">
+      <form 
+        onSubmit={handleSubmit} 
+        className=" m-4 w-full max-w-lg sm:max-w-2xl md:max-w-3xl space-y-4 p-6 rounded-lg shadow-lg bg-gradient-to-br from-purple-200 to-indigo-400 text-black"
+      >
+        {/* Input Field */}
         <input
           type="text"
           name="task"
           value={taskData.task}
-          className="w-full text-xl bg-gray-200 border-rounded rounded p-4 mt-4 py-2"
+          className="w-full text-lg sm:text-xl bg-gray-200 rounded-md px-4 py-3 sm:py-4 focus:outline-none"
           placeholder="Enter your task"
           onChange={handleChange}
         />
-        <div className="flex items-center justify-between">
-          <div>
-            {["HTML", "CSS", "JavaScript", "React"].map((tag) => (
-              <Tag key={tag} tagName={tag} selectTag={selectTag} selected={taskData.tags.includes(tag)} />
-            ))}
-          </div>
-          <div>
-            <select name="status" value={taskData.status} className="font-sm bg-gray-100 cursor-pointer mx-2 py-2 rounded" onChange={handleChange}>
-              <option value="todo">To Do</option>
-              <option value="doing">Doing</option>
-              <option value="done">Done</option>
-            </select>
-            <button type="submit" className="text-sm bg-purple-600 text-white mx-2 py-2 cursor-pointer rounded px-2">
-              Add Task
-            </button>
-          </div>
+
+        {/* Tags Section */}
+        <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+          {["HTML", "CSS", "JavaScript", "React"].map((tag) => (
+            <Tag key={tag} tagName={tag} selectTag={selectTag} selected={taskData.tags.includes(tag)} />
+          ))}
+        </div>
+
+        {/* Status & Submit Button */}
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
+          <select 
+            name="status" 
+            value={taskData.status} 
+            className="w-full sm:w-auto text-base bg-gray-100 cursor-pointer px-4 py-2 rounded-md focus:outline-none"
+            onChange={handleChange}
+          >
+            <option value="todo">To Do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+          
+          <button 
+            type="submit" 
+            className="w-full sm:w-auto text-lg bg-purple-600 text-white px-6 py-3 rounded-md hover:bg-purple-700 transition-all"
+          >
+            Add Task
+          </button>
         </div>
       </form>
     </header>

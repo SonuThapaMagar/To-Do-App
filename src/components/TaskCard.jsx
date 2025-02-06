@@ -6,7 +6,7 @@ const TaskCard = ({ title, tags, deleteTask }) => {
     console.log("Rendering TaskCard with:", { title, tags });
 
     return (
-        <article className="flex flex-col text-left p-4 rounded-lg max-w-xs sm:max-w-md mx-auto mb-4 bg-gray-100 shadow-md h-full">
+        <article className="flex flex-col text-left p-4 rounded-lg max-w-xs sm:max-w-md mx-auto mb-0 bg-gray-100 shadow-md h-full">
             {/* Task Title */}
             <p className="mb-2 text-base sm:text-lg font-semibold">{title}</p>
 

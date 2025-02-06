@@ -31,7 +31,7 @@ const App = () => {
       <TaskForm setTasks={setTasks} />
 
       {/* Task Columns (Responsive Grid) */}
-      <main className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-5xl p-4">
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-0 w-full max-w-5xl p-0">
         <TaskColumn title="To Do" tasks={tasks} status="todo" deleteTask={deleteTask} />
         <TaskColumn title="Doing" tasks={tasks} status="doing" deleteTask={deleteTask} />
         <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />

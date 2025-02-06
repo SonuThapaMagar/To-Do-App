@@ -13,7 +13,7 @@ const TaskColumn = ({ title, tasks = [], status, deleteTask }) => {
   console.log(`Column ${title} (${status}) - Filtered Tasks:`, filteredTasks);
 
   return (
-    <section className="flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 min-w-[250px] text-black bg-gray-100 shadow-lg rounded-lg p-4">
+    <section className="flex flex-col w-full sm:w-1/2 md:w-1/3 lg:w-1/4 min-w-[250px] text-black bg-blue-100 shadow-lg rounded-lg p-4 mb-8">
       <h2 className="text-lg sm:text-xl font-bold flex items-center gap-2 justify-center mb-4">
         {icons[title]} {title}
       </h2>
