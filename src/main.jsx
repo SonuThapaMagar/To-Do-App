@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';  // Use 'client' for React 18+
 import App from './App';
-import './index.css';  // Ensure the CSS file is correctly linked
+import './index.css';  
 
 const root = document.getElementById('root'); // Ensure the root element exists
 

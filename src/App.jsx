@@ -1,38 +1,43 @@
 import React, { useState, useEffect } from "react";
 import TaskForm from "./components/TaskForm";
 import TaskColumn from "./components/TaskColumn";
+import "./App.css"; 
+import "./index.css";
 
-const oldTasks = localStorage.getItem("tasks")
+const oldTasks = localStorage.getItem("tasks");
 
-console.log(oldTasks);
 const App = () => {
   const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
-  console.log("App tasks:", tasks);
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks))
-  }, [tasks])
-
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const deleteTask = (taskToDelete) => {
-    setTasks((prev) => prev.filter(task => task !== taskToDelete));
+    setTasks((prev) => prev.filter((task) => task !== taskToDelete));
   };
 
   return (
-    <div>
-      <h2 className="text-center mt-8 text-3xl font-bold text-purple-700 animate-pulse" style={{ fontFamily: "'Bungee Shade', cursive" }}>
+    <div className="relative w-full min-h-screen bg-gray-200 text-white flex flex-col items-center">
+      {/* App Title */}
+      <h2
+        className="text-center mt-6 text-3xl sm:text-4xl font-bold text-purple-400"
+        style={{ fontFamily: "'Bungee Shade', cursive" }}
+      >
         To Do App
       </h2>
-      <div className="grid">
-        <TaskForm setTasks={setTasks} />
-        <main className="flex justify-evenly p-4">
-          <TaskColumn title="To Do" tasks={tasks} status="todo" deleteTask={deleteTask} />
-          <TaskColumn title="Doing" tasks={tasks} status="doing" deleteTask={deleteTask} />
-          <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />
-        </main>
-      </div>
+
+      {/* Task Form */}
+      <TaskForm setTasks={setTasks} />
+
+      {/* Task Columns (Responsive Grid) */}
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-5xl p-4">
+        <TaskColumn title="To Do" tasks={tasks} status="todo" deleteTask={deleteTask} />
+        <TaskColumn title="Doing" tasks={tasks} status="doing" deleteTask={deleteTask} />
+        <TaskColumn title="Done" tasks={tasks} status="done" deleteTask={deleteTask} />
+      </main>
     </div>
-  ); first
+  );
 };
 
 export default App;
