@@ -1,6 +1,6 @@
-@import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Pacifico&family=Poppins:wght@700&display=swap');
+@import "tailwindcss";
 
   @media (max-width: 768px) {
     main {
