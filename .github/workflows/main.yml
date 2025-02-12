@@ -1,0 +1,33 @@
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: 
+          cd | todo
+          npm install
+
+      - name: Build the project
+        run: 
+          cd | todo
+          npm run build
+
+      - name: Deploy to Vercel Preview
+        uses: amondnet/vercel-action@v21
+        with:
+          vercel_token: ${{ secrets.VERCEL_TOKEN }}
+          vercel_org_id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel_preview: true
