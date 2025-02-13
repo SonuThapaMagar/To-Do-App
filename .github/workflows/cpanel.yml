@@ -1,1 +1,30 @@
+name: Deploy in cPanel
+ 
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  deploy:
+    name: Deploy to cPanel via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Checkout repository
+         uses: actions/checkout@v4
+
+       -  name: Upload files to cPanel via FTP
+          uses: SamKirkland/FTP-Deploy-Action@v4
+          with: 
+            server: ${{FTP_SERVER}}
+            username: ${{FTP_USERNAME}}
+            password: ${{FTP_PASSWORD}}
+            local-dir: ./
+            
+            
+          
+        
+       
+
+  
