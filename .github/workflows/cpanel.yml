@@ -13,14 +13,25 @@ jobs:
     steps:
        - name: Checkout repository
          uses: actions/checkout@v4
+         
+       - name: Install dependencies
+         run: 
+          cd | todo
+          npm install
 
+       - name: Build the project
+         run: 
+          cd | todo
+          npm run build
+          
        -  name: Upload files to cPanel via FTP
           uses: SamKirkland/FTP-Deploy-Action@v4
           with: 
             server: ${{FTP_SERVER}}
             username: ${{FTP_USERNAME}}
             password: ${{FTP_PASSWORD}}
-            local-dir: ./
+            local-dir: ./dist/
+            
             
             
           
