@@ -41,8 +41,8 @@ This will start the Vite development server and open your portfolio in the defau
 - Vite for build
 
 # Live at
-Check out Todo App live at: [Todo App](https://todo.oznepalservices.com.au/)
-Check out Todo App Deployed in Vercel live at: [Todo App](https://vercel.com/sonuthapamagars-projects/to-do-app)
+- Check out Todo App live at: [Todo App](https://todo.oznepalservices.com.au/)
+- Check out Todo App Deployed in Vercel live at: [Todo App](https://vercel.com/sonuthapamagars-projects/to-do-app)
 
 
 # Conclusion
