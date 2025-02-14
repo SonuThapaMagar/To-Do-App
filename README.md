@@ -42,6 +42,8 @@ This will start the Vite development server and open your portfolio in the defau
 
 # Live at
 Check out Todo App live at: [Todo App](https://todo.oznepalservices.com.au/)
+Check out Todo App Deployed in Vercel live at: [Todo App](https://vercel.com/sonuthapamagars-projects/to-do-app)
+
 
 # Conclusion
 This TODO List App provides a way to manage tasks with features like adding, editing, and deleting tasks. Whether you're keeping track of daily activities or long-term goals, this app helps streamline your workflow. Feel free to enhance it further with additional features like authentication, drag-and-drop functionality, or cloud storage integration.
